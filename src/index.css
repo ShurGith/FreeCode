@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  font-size: 62.5%;
+}
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  gap:2rem;
+}
+
+.divcontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  gap: .5rem;
+  border: .1em solid #000000;
+  padding: 2rem;
+  height: 230px;
+  border-radius: .3rem;
+
+  min-width: 15rem;
+}
+.divcontainer h1 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.divinner {
+min-height: 5rem;
+width: 100%;
+text-align: center;
+}
+.divbuttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.componente {
+background-color: darksalmon;
+font-size:1.3rem;
+padding:1rem;
+border-radius: .3rem;
+box-shadow: #000000 0px 10px 10px;
+}
+
+button.aceptar {
+  cursor: pointer;
+  background-color: #008100;
+  font-size: 1rem;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: .4rem;
+  transition:.3s all ease;
+  &:hover {
+    background-color: #75d375;
+    color:#000000
+  }
+} 
+button.rechazar {
+  cursor: pointer;
+  background-color: #ff0000;
+  font-size: 1rem;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: .4rem;
+  transition:.3s all ease;
+  &:hover {
+    background-color: #f8430c;
+    color:#000000
+  }
+} 
