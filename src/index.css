@@ -1,10 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Supermercado+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Supermercado One", sans-serif;
   background-color: #f4f4f4;
   font-size: 62.5%;
 }
@@ -33,6 +37,7 @@ body {
 .divcontainer h1 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
+  font-family: "Kanit", sans-serif;
 }
 .divinner {
 min-height: 5rem;
@@ -51,30 +56,45 @@ padding:1rem;
 border-radius: .3rem;
 box-shadow: #000000 0px 10px 10px;
 }
-
-button.aceptar {
+button{
   cursor: pointer;
   background-color: #008100;
-  font-size: 1rem;
+  font-size: 1.3rem;
   color: white;
   padding: 0.4rem 0.8rem;
   border-radius: .4rem;
   transition:.3s all ease;
+ font-family: "Supermercado One", sans-serif;
+}
+button.aceptar {
+  background-color: #008100;
   &:hover {
     background-color: #75d375;
     color:#000000
   }
 } 
 button.rechazar {
-  cursor: pointer;
   background-color: #ff0000;
-  font-size: 1rem;
-  color: white;
-  padding: 0.4rem 0.8rem;
-  border-radius: .4rem;
-  transition:.3s all ease;
   &:hover {
     background-color: #f8430c;
     color:#000000
   }
 } 
+
+.inputText {
+  width: 100%;
+  padding: 0.5rem;
+  border: 2px solid #100087;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: #61b8ff;
+  color: #fff;
+  font-weight: bold;
+  font-family: "Supermercado One", sans-serif;
+  margin-bottom: 2rem;;
+  &:focus {
+    outline: none;
+    border-color: #71ff4d;
+    color:#100087
+  }
+}
