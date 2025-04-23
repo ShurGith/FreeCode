@@ -9,15 +9,12 @@ function TextH2() {
     }
     //console.log("Hola mundo")
 
-
-
-
     useEffect(() => {
         console.log("MONTADO")
         return () => {
             console.log("DESMONTADO")
         }
-    })
+    }, [])
 
     /*
     //**
