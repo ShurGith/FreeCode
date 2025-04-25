@@ -1,21 +1,35 @@
-import { useState, useEffect } from 'react'
+import { useContext, useState } from 'react'
+import { CartContext } from '../../context/CartContext'
 
 function ItemCount({ producto }) {
 
     const [count, setCount] = useState(1)
+    const { carrito, setCarrito } = useContext(CartContext)
+
+
     function sumar() {
         count < producto.stock && setCount(count + 1)
+        // console.log(count)
     }
     function restar() {
         count > 1 && setCount(count - 1)
     }
     function agregarAlCarrito() {
-        const carrito = {
-            id: producto.id,
-            cantidad: count
-        }
-        console.log(carrito)
+        const cesta = { ...producto, count }
 
+        const nuevoCarrito = [...carrito]
+        const enCarrrito = nuevoCarrito.find((producto) => producto.id === cesta.id)
+
+        if (enCarrrito)
+            nuevoCarrito.count = count
+        else
+            nuevoCarrito.push(cesta)
+
+
+        setCarrito(nuevoCarrito)
+
+        //  } else {
+        //  }
     }
 
     return (
