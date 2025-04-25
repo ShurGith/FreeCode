@@ -22,13 +22,10 @@ const DataFetch = () => {
     }, [apiUrl]);
 
     const siguiente = () => {
-        // setOffset(offset + 5);
         next && setApiUrl(next);
 
     };
     const anterior = () => {
-        //if (offset === 0) return;
-        //  setOffset(offset - 5);
         previous && setApiUrl(previous);
     };
     const pokisChange = (pokemon) => {

@@ -1,7 +1,10 @@
 
-import { codeColors } from '../helpers/codeColors'
+import { codeColors } from '../helpers/codigos'
+import ItemCount from './partials/ItemCount'
+
 function Item({ producto }) {
-    console.log(producto)
+    //console.log(producto)
+
     return (
         <div className="card-product">
             <h2 className="title-product">{producto.title}</h2>
@@ -25,7 +28,9 @@ function Item({ producto }) {
             <h5 className="category-product"
                 style={{ backgroundColor: codeColors[producto.category] || '#bdc3c7' }}
             >{producto.category}</h5>
-            <a className="btn-product" href={`/item/${producto.id}`}>Comprar</a>
+            <div className="container-comprar">
+                <ItemCount producto={producto} />
+            </div>
         </div>
     )
 }

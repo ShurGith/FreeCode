@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react'
 import { pedirUnico } from '../helpers/pedirDatos'
 import Item from './Unico'
-const ItemDetails = ({ itemId }) => {
+import { useParams } from 'react-router-dom'
+
+const ItemDetails = () => {
 
     const [item, setItem] = useState(null)
+    const itemId = Number(useParams().itemId)
 
     useEffect(() => {
         pedirUnico(itemId)

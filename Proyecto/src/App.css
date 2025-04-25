@@ -25,17 +25,21 @@ ul.menu {
 
 }
 
-.navbar a {
+.navbar .menu-link {
   font-weight: 500;
   color: #646cff;
   text-decoration: inherit;
   font-size: 1.5rem;
 }
 
-.navbar a:hover {
+.navbar .menu-link:hover {
   color: #ffffff;
 }
 
+
+.navbar .menu-link.active {
+  color: #ffffff;
+}
 
 main {
   display: flex;
@@ -43,9 +47,14 @@ main {
   justify-content: start;
   width: 80%;
   margin: 1rem auto;
-  font-size: 2rem;
 }
 
+main h1:first-of-type {
+  font-size: 4rem;
+  &:first-letter {
+     text-transform: uppercase;
+  }
+}
 .products-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -91,7 +100,10 @@ h2.title-product {
   }
 
 } 
-
+.category-product a {
+  color:#ffffff;
+  font-size: 1rem;
+}
 .img-product {
   width: 125px;
   transition: all 0.3s ease-in-out;
@@ -152,16 +164,58 @@ h2.title-product {
   font-size: 1rem;
   border: 1px solid #000;
   transition: 0.3s ease all;
+  cursor: pointer;
 }
 
 .card-product .btn-product {
-  font-size:2.5rem;
+  font-size:2rem;
+  background-color: #1e48ef;
 }
 
 .btn-product:hover {
+  background-color: #005998;
+  color: #0011ff;
+}
+
+.container-comprar {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 70%;
+}
+.div-btnComprar {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.container-contador {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  gap: 1rem;
+}
+
+.container-contador .btnCount {
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: #103ae2;
+  color: #ffffff;
+  cursor: pointer;
+  transition: 0.3s ease all;
+  width: 50px;
+}
+
+.container-contador .inputCount{
   background-color: #ffffff;
   color: #000;
+  font-size: 2rem;
+  max-width: 50px;
+  text-align: center;
+  border-radius: 0.5rem;
 }
+
 
 footer {
   display: flex;

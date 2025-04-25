@@ -1,13 +1,14 @@
 
-import { codeColors } from '../helpers/codeColors'
+import { Link } from 'react-router-dom'
+import { codeColors } from '../helpers/codigos'
+
 function ItemForList({ producto }) {
-    console.log(producto)
     return (
         <div className="card-forlist">
             <h2 className="title-product">{producto.title}</h2>
             <h5 className="category-product"
                 style={{ backgroundColor: codeColors[producto.category] || '#bdc3c7' }}
-            >{producto.category}</h5>
+            ><Link to={`/category/${producto.category}`}>{producto.category}</Link></h5>
             <img className="img-product" src={producto.thumbnail} alt={producto.title} />
             {/*  <p className="description-product">{producto.description}</p> */}
             <h3 className="price-product">${producto.price}</h3>
