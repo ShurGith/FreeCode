@@ -9,6 +9,7 @@ import Nosotros from './pages/Nosotros'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { useState } from 'react'
 import { CartContext } from './context/CartContext'
+import Carrito from './components/Carrito'
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
             <Route path='/productos' element={<ItemListContainer />} />
             <Route path='/item/:itemId' element={<UnicoDetails />} />
             <Route path='/category/:category' element={<ItemListContainer />} />
+            <Route path='/carrito' element={<Carrito />} />
             <Route path='/' element={<Home />} />
             <Route path='/nosotros' element={<Nosotros />} />
             <Route path='/contacto' element={<Contacto />} />

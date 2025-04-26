@@ -19,8 +19,10 @@ function Navbar() {
             </ul>
             <div className="nav-carrito">
                 <div className="carrito">
-                    <Icon className="icon-carrito" icon="material-symbols:shopping-cart" />
-                    <p className="carrito-cantidad">{calcTotal()}</p>
+                    <NavLink to="/carrito" className="menu-link">
+                        <Icon className="icon-carrito" icon="material-symbols:shopping-cart" />
+                        <p className="carrito-cantidad">{calcTotal()}</p>
+                    </NavLink>
                 </div>
             </div>
         </nav>
