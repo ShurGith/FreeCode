@@ -3,20 +3,22 @@ import Navbar from './components/Navbar'
 import ItemListContainer from './components/ItemListContainer'
 import Footer from './components/Footer'
 import UnicoDetails from './components/UnicoDetails'
-import ItemList from './components/ItemList'
 import Home from './pages/Home'
 import Contacto from './pages/Contacto'
 import Nosotros from './pages/Nosotros'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { useState, useContext } from 'react'
+import { useState } from 'react'
 import { CartContext } from './context/CartContext'
 
 function App() {
 
   const [carrito, setCarrito] = useState([]);
+  function calcTotal() {
+    return carrito.reduce((acc, producto) => acc + producto.count, 0)
+  }
 
   return (
-    <CartContext.Provider value={{ carrito, setCarrito }}>
+    <CartContext.Provider value={{ carrito, setCarrito, calcTotal }}>
       <BrowserRouter>
         <Navbar />
         <main>

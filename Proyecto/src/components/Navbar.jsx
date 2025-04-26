@@ -7,10 +7,7 @@ import './navbar.css'
 
 function Navbar() {
 
-    const carrito = useContext(CartContext)
-    console.log(carrito)
-    console.log(carrito.carrito)
-    const cantidadCarrito = carrito.carrito.reduce((acc, producto) => acc + producto.count, 0)
+    const { calcTotal } = useContext(CartContext)
     return (
         <nav className="navbar">
             <NavLink to="/" className="logo-link">ReactCurso</NavLink>
@@ -23,7 +20,7 @@ function Navbar() {
             <div className="nav-carrito">
                 <div className="carrito">
                     <Icon className="icon-carrito" icon="material-symbols:shopping-cart" />
-                    <p className="carrito-cantidad">{cantidadCarrito}</p>
+                    <p className="carrito-cantidad">{calcTotal()}</p>
                 </div>
             </div>
         </nav>

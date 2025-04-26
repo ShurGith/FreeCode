@@ -3,33 +3,27 @@ import { CartContext } from '../../context/CartContext'
 
 function ItemCount({ producto }) {
 
-    const [count, setCount] = useState(1)
     const { carrito, setCarrito } = useContext(CartContext)
+    const [count, setCount] = useState(1)
 
 
     function sumar() {
         count < producto.stock && setCount(count + 1)
-        // console.log(count)
     }
     function restar() {
         count > 1 && setCount(count - 1)
     }
     function agregarAlCarrito() {
         const cesta = { ...producto, count }
-
         const nuevoCarrito = [...carrito]
         const enCarrrito = nuevoCarrito.find((producto) => producto.id === cesta.id)
 
         if (enCarrrito)
-            nuevoCarrito.count = count
+            enCarrrito.count += count
         else
             nuevoCarrito.push(cesta)
 
-
         setCarrito(nuevoCarrito)
-
-        //  } else {
-        //  }
     }
 
     return (
