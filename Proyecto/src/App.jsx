@@ -16,7 +16,7 @@ function App() {
   function calcTotal() {
     return carrito.reduce((acc, producto) => acc + producto.count, 0)
   }
-
+  console.log(carrito)
   return (
     <CartContext.Provider value={{ carrito, setCarrito, calcTotal }}>
       <BrowserRouter>

@@ -3,14 +3,12 @@ import { codeColors } from '../helpers/codigos'
 import ItemCount from './partials/ItemCount'
 
 function Item({ producto }) {
-    //console.log(producto)
-
     return (
         <div className="card-product">
             <h2 className="title-product">{producto.title}</h2>
             <div className="container-imagenes">
                 <img className="img-product" src={producto.thumbnail} alt={producto.title} />
-                {producto.images &&
+                {producto.images.length > 1 &&
                     <div className="div-thumbs">
                         {producto.images.map((img, index) => (
                             <img
