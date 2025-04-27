@@ -18,7 +18,7 @@ function Carrito() {
             return producto
         })
         setCarrito(nuevoCarrito)
-        SetCookies()
+        localStorage.setItem('carrito', JSON.stringify(nuevoCarrito))
     }
 
 
@@ -26,14 +26,14 @@ function Carrito() {
         if (window.confirm('Seguro que deseas eliminar el producto?')) {
             const nuevoCarrito = carrito.filter((producto) => producto.id !== id)
             setCarrito(nuevoCarrito)
-            SetCookies(true)
+            localStorage.setItem('carrito', JSON.stringify(nuevoCarrito))
         }
     }
 
     function eliminarCarrito() {
         if (window.confirm('Seguro que deseas eliminar el carrito?')) {
+            localStorage.removeItem('carrito')
             setCarrito([])
-            SetCookies(true)
         }
     }
 

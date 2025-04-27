@@ -10,38 +10,39 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { useState } from 'react'
 import { CartContext } from './context/CartContext'
 import Carrito from './components/Carrito'
-import Cookies from 'js-cookie';
-import { chekarCookie } from './helpers/cookieHelpler'
+//import Cookies from 'js-cookie';
+//import { chekarCookie } from './helpers/cookieHelpler'
 
 function App() {
 
-  const [carrito, setCarrito] = useState([]);
+  const carritoInicial = JSON.parse(localStorage.getItem('carrito')) || [];
+  const [carrito, setCarrito] = useState(carritoInicial);
 
   function calcTotal() {
     return carrito.reduce((acc, producto) => acc + producto.count, 0)
   }
-
-  function SetCookies(eliminar = false) {
-
-    if (eliminar) {
-      Cookies.remove('carrito')
-    } else {
-      Cookies.set('carrito', JSON.stringify(carrito))
+  /*
+    function SetCookies(eliminar = false) {
+  
+      if (eliminar) {
+        Cookies.remove('carrito')
+      } else {
+        Cookies.set('carrito', JSON.stringify(carrito))
+      }
     }
-  }
-
-
-  if (chekarCookie()) {
-    setCarrito([])
-    const carritoIni = JSON.parse(Cookies.get('carrito'))
-    Cookies.remove('carrito')
-    setCarrito(carritoIni)
-  } else {
-    SetCookies()
-  }
-
+  
+  
+    if (chekarCookie()) {
+      setCarrito([])
+      const carritoIni = JSON.parse(Cookies.get('carrito'))
+      Cookies.remove('carrito')
+      setCarrito(carritoIni)
+    } else {
+      SetCookies()
+    }
+  */
   return (
-    <CartContext.Provider value={{ carrito, setCarrito, calcTotal, SetCookies }}>
+    <CartContext.Provider value={{ carrito, setCarrito, calcTotal }}>
       <BrowserRouter>
         <Navbar />
         <main>

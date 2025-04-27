@@ -3,7 +3,7 @@ import { CartContext } from '../../context/CartContext'
 
 function ItemCount({ producto }) {
 
-    const { carrito, setCarrito, SetCookies } = useContext(CartContext)
+    const { carrito, setCarrito } = useContext(CartContext)
     const [count, setCount] = useState(1)
 
 
@@ -23,7 +23,8 @@ function ItemCount({ producto }) {
         else
             nuevoCarrito.push(cesta)
 
-        SetCookies(true)
+        //SetCookies(true)
+        localStorage.setItem('carrito', JSON.stringify(nuevoCarrito))
         setCarrito(nuevoCarrito)
     }
 
