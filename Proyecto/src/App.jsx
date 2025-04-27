@@ -30,6 +30,7 @@ function App() {
     }
   }
 
+
   if (chekarCookie()) {
     setCarrito([])
     const carritoIni = JSON.parse(Cookies.get('carrito'))
