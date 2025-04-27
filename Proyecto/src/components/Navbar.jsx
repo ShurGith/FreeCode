@@ -4,9 +4,7 @@ import { CartContext } from "../context/CartContext"
 import { Icon } from '@iconify-icon/react';
 import './navbar.css'
 
-
 function Navbar() {
-
     const { calcTotal } = useContext(CartContext)
     return (
         <nav className="navbar">
@@ -19,10 +17,12 @@ function Navbar() {
             </ul>
             <div className="nav-carrito">
                 <div className="carrito">
-                    <NavLink to="/carrito" className="menu-link">
-                        <Icon className="icon-carrito" icon="material-symbols:shopping-cart" />
-                        <p className="carrito-cantidad">{calcTotal()}</p>
-                    </NavLink>
+                    {calcTotal() > 0 &&
+                        <NavLink to="/carrito" className="carrito-link">
+                            <Icon className="icon-carrito" icon="material-symbols:shopping-cart" />
+                            <p className="carrito-cantidad">{calcTotal()}</p>
+                        </NavLink>
+                    }
                 </div>
             </div>
         </nav>

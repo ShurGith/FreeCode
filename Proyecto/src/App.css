@@ -97,10 +97,6 @@ h2.title-product {
 }
 
 
-/* .description-product {
-  font-size: 0.95rem;
-  padding: 0 1rem;
-} */
 .card-product .description-product {
   font-size: 1.5rem;
   padding: 0 1rem;
@@ -200,13 +196,7 @@ h2.title-product {
   border-radius: 0.5rem;
 }
 
- .carrito-count {
-  color: #000000;
-  border-radius: 50%;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  border: 1px solid #000;
-}
+
 
 footer {
   display: flex;

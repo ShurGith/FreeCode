@@ -11,7 +11,6 @@ function ItemForList({ producto }) {
                 <Link to={`/category/${producto.category}`}>{producto.category}</Link>
             </h5>
             <img className="img-product" src={producto.thumbnail} alt={producto.title} />
-            {/*  <p className="description-product">{producto.description}</p> */}
             <h3 className="price-product">${producto.price}</h3>
             <Link className="btn-product" to={`/item/${producto.id}`}>Mas Info</Link>
         </div>

@@ -44,7 +44,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
 }
 
 .navbar .carrito{
@@ -52,12 +51,22 @@
     height: 50px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     position: relative;
 }
+
+
 .icon-carrito {
   font-size: 3rem;
   color: #000;
+}
+
+.carrito-link.active .icon-carrito {
+  color:#6c6c6c3f
+}
+.carrito-link.active .carrito-cantidad {
+  background-color:#6c6c6c3f;
+  color:#ffffff;
 }
 
 .carrito-cantidad {
