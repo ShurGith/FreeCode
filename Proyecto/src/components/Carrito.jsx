@@ -37,6 +37,10 @@ function Carrito() {
         }
     }
 
+    function redondear(num) {
+        return Math.ceil(num * 100) / 100;
+    }
+
 
     return (<>
         <h1 className="titulo-carrito">Carrito</h1>
@@ -74,7 +78,7 @@ function Carrito() {
                                         className="carrito-icon" />
                                 </div>
                                 <p className="carrito-precio">{producto.price}</p>
-                                <p className="carrito-total">Total: {producto.price * producto.count}</p>
+                                <p className="carrito-total">Total: {redondear(producto.price * producto.count)}</p>
                             </div>
                             <div className="div-carrito-eliminar">
                                 <Icon icon="oi:trash"
@@ -95,7 +99,7 @@ function Carrito() {
                     </div>
                     <div className="div-carrito-total-textos">
                         <h2 className="carrito-total-texto">
-                            Total: ${carrito.reduce((acc, producto) => acc + producto.price * producto.count, 0)}
+                            Total: {redondear(carrito.reduce((acc, producto) => acc + producto.price * producto.count, 0))}€
                         </h2>
                         <button className="btn-fin-carrito btn-comprar">
                             <Icon icon="twemoji:shopping-cart" width="30" height="30" />
